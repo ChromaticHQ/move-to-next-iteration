@@ -24,13 +24,10 @@ jobs:
         iteration-field: Iteration
         iteration: last
         new-iteration: current
-        statuses:
-          - Todo
-          - In Progress
-          - In Review
+        statuses: 'Todo,In Progress,In Review'
 ```
 
-Alternatively, you may specify an `excluded-statuses` array instead. In this case, all items that _don’t_ have these statuses will be moved to the new iteration:
+Alternatively, you may specify `excluded-statuses`. In this case, all items that _don’t_ have these statuses will be moved to the new iteration. (Note that if `excluded-statuses` is used, `statuses` will be ignored.)
 
 ```yaml
 on:
@@ -52,9 +49,7 @@ jobs:
         iteration-field: Iteration
         iteration: last
         new-iteration: current
-        excluded-statuses:
-          - Done
-          - Won't Fix
+        excluded-statuses: "Done,Won't Fix"
 ```
 
 ## Inputs
